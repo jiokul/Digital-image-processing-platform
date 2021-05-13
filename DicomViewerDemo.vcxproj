@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E037EE8A-3439-4AD4-A005-F4AA0BEEED01}</ProjectGuid>
+    <Keyword>QtVS_v303</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.18362.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <IncludePath>..\VTK\include\vtk-8.2;..\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\VTK\lib;$(VC_LibraryPath_x64);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <IncludePath>..\VTK\include\vtk-8.2;..\include;..\ITK\bin\include\ITK-4.13;$(IncludePath)</IncludePath>
+    <LibraryPath>..\VTK\lib;$(VC_LibraryPath_x64);..\ITK\bin\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Link>
+      <AdditionalDependencies>../VTK/lib/*;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Link>
+      <AdditionalDependencies>../VTK/lib/*;../ITK/bin/lib/*.lib;F:\QT\5.15.0\msvc2019_64\lib\Qt5PrintSupportd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;BOOST_ALL_NO_LIB;BOOST_USE_WINDOWS_H;NOMINMAX;_SCL_SECURE_NO_WARNINGS;_SILENCE_FPOS_SEEKPOS_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>msvc2019_64</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>F:\QT\5.15.0\msvc2019_64</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Binariza.cpp" />
+    <ClCompile Include="Binariza_turn.cpp" />
+    <ClCompile Include="blur.cpp" />
+    <ClCompile Include="canny.cpp" />
+    <ClCompile Include="DoubleSubmit.cpp" />
+    <ClCompile Include="DoubleThreshold.cpp" />
+    <ClCompile Include="Egary.cpp" />
+    <ClCompile Include="Equalization.cpp" />
+    <ClCompile Include="Gpicture.cpp" />
+    <ClCompile Include="grayview.cpp" />
+    <ClCompile Include="HSIEquation.cpp" />
+    <ClCompile Include="Invert_colour.cpp" />
+    <ClCompile Include="MyLabel.cpp" />
+    <ClCompile Include="Prewitt.cpp" />
+    <ClCompile Include="qcustomplot.cpp" />
+    <ClCompile Include="RGBEquation.cpp" />
+    <ClCompile Include="SAVE.cpp" />
+    <ClCompile Include="screenShotClass.cpp" />
+    <ClCompile Include="sharpen.cpp" />
+    <ClCompile Include="ShowAllTag.cpp" />
+    <ClCompile Include="SmoothGauss.cpp" />
+    <ClCompile Include="start.cpp" />
+    <ClCompile Include="start2.cpp" />
+    <ClCompile Include="WindowColorDefined.cpp" />
+    <QtRcc Include="DicomViewerDemo.qrc" />
+    <QtUic Include="Binariza.ui" />
+    <QtUic Include="Binariza_turn.ui" />
+    <QtUic Include="blur.ui" />
+    <QtUic Include="canny.ui" />
+    <QtUic Include="DicomViewerDemo.ui" />
+    <QtMoc Include="DicomViewerDemo.h" />
+    <ClCompile Include="DicomViewerDemo.cpp" />
+    <ClCompile Include="ImageRender.cpp" />
+    <ClCompile Include="main.cpp" />
+    <QtUic Include="DoubleSubmit.ui" />
+    <QtUic Include="DoubleThreshold.ui" />
+    <QtUic Include="Egary.ui" />
+    <QtUic Include="Equalization.ui" />
+    <QtUic Include="Gpicture.ui" />
+    <QtUic Include="grayview.ui" />
+    <QtUic Include="HSIEquation.ui" />
+    <QtUic Include="Invert_colour.ui" />
+    <QtUic Include="Prewitt.ui" />
+    <QtUic Include="RGBEquation.ui" />
+    <QtUic Include="SAVE.ui" />
+    <QtUic Include="screenShotClass.ui" />
+    <QtUic Include="sharpen.ui" />
+    <QtUic Include="ShowAllTag.ui" />
+    <QtUic Include="SmoothGauss.ui" />
+    <QtUic Include="start.ui" />
+    <QtUic Include="start2.ui" />
+    <QtUic Include="WindowColorDefined.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="SAVE.h" />
+    <QtMoc Include="sharpen.h" />
+    <QtMoc Include="start2.h" />
+    <QtMoc Include="qcustomplot.h" />
+    <QtMoc Include="RGBEquation.h" />
+    <QtMoc Include="Prewitt.h" />
+    <QtMoc Include="SmoothGauss.h" />
+    <QtMoc Include="start.h" />
+    <QtMoc Include="Binariza.h" />
+    <QtMoc Include="canny.h" />
+    <QtMoc Include="Binariza_turn.h" />
+    <QtMoc Include="blur.h" />
+    <ClInclude Include="change.h" />
+    <QtMoc Include="grayview.h" />
+    <QtMoc Include="Equalization.h" />
+    <QtMoc Include="Egary.h" />
+    <QtMoc Include="Gpicture.h" />
+    <QtMoc Include="HSIEquation.h" />
+    <QtMoc Include="DoubleThreshold.h" />
+    <QtMoc Include="DoubleSubmit.h" />
+    <ClInclude Include="ImageRender.h" />
+    <QtMoc Include="Invert_colour.h" />
+    <ClInclude Include="MyLabel.h" />
+    <ClInclude Include="myVtkInteractorStyleImage.h" />
+    <QtMoc Include="screenShotClass.h" />
+    <QtMoc Include="WindowColorDefined.h" />
+    <QtMoc Include="ShowAllTag.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

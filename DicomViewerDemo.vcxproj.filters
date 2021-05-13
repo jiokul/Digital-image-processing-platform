@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="DicomViewerDemo.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <QtUic Include="DicomViewerDemo.ui">
+      <Filter>Resource Files</Filter>
+    </QtUic>
+    <QtMoc Include="DicomViewerDemo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClCompile Include="DicomViewerDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageRender.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowAllTag.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowColorDefined.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="screenShotClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Binariza.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyLabel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="grayview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="start.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SmoothGauss.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Prewitt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="canny.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Equalization.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Egary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RGBEquation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Gpicture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qcustomplot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="start2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sharpen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SAVE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Binariza_turn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Invert_colour.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="blur.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HSIEquation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DoubleThreshold.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DoubleSubmit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="myVtkInteractorStyleImage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageRender.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyLabel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="change.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="ShowAllTag.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="WindowColorDefined.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="screenShotClass.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Binariza.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="grayview.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="start.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="SmoothGauss.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Prewitt.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="canny.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Equalization.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Egary.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="RGBEquation.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Gpicture.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="qcustomplot.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="start2.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="sharpen.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="SAVE.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Binariza_turn.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Invert_colour.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="blur.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="HSIEquation.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="DoubleThreshold.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="DoubleSubmit.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="ShowAllTag.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="WindowColorDefined.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="screenShotClass.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="Binariza.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="grayview.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="start.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="SmoothGauss.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="Prewitt.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="canny.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="Equalization.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="Egary.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="RGBEquation.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="Gpicture.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="start2.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="sharpen.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="SAVE.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="Binariza_turn.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="Invert_colour.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="blur.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="HSIEquation.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="DoubleThreshold.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="DoubleSubmit.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+  </ItemGroup>
+</Project>
