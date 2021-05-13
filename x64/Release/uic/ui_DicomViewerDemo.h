@@ -61,6 +61,7 @@ public:
     QAction *actionANTICHROMIC;
     QAction *actionHSI;
     QAction *actiondouble;
+    QAction *actionHSV;
     QWidget *centralWidget;
     QHBoxLayout *horizontalLayout;
     QMenuBar *menuBar;
@@ -1416,6 +1417,8 @@ public:
         actionHSI->setObjectName(QString::fromUtf8("actionHSI"));
         actiondouble = new QAction(DicomViewerDemoClass);
         actiondouble->setObjectName(QString::fromUtf8("actiondouble"));
+        actionHSV = new QAction(DicomViewerDemoClass);
+        actionHSV->setObjectName(QString::fromUtf8("actionHSV"));
         centralWidget = new QWidget(DicomViewerDemoClass);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
@@ -1499,6 +1502,7 @@ public:
         menu_4->addAction(actionEgray);
         menu_4->addAction(RGBEaction);
         menu_4->addAction(actionHSI);
+        menu_4->addAction(actionHSV);
         menu_5->addAction(actionFANOTSU);
 
         retranslateUi(DicomViewerDemoClass);
@@ -1544,8 +1548,9 @@ public:
         actionFANOTSU->setText(QCoreApplication::translate("DicomViewerDemoClass", "OTSU", nullptr));
         actionblur->setText(QCoreApplication::translate("DicomViewerDemoClass", "\345\233\276\345\203\217\346\250\241\347\263\212", nullptr));
         actionANTICHROMIC->setText(QCoreApplication::translate("DicomViewerDemoClass", "\345\233\276\345\203\217\345\217\215\350\211\262", nullptr));
-        actionHSI->setText(QCoreApplication::translate("DicomViewerDemoClass", "HSI\347\251\272\351\227\264\347\233\264\346\226\271\345\233\276\345\235\207\350\241\241\345\214\226", nullptr));
+        actionHSI->setText(QCoreApplication::translate("DicomViewerDemoClass", "HSI\347\251\272\351\227\264\347\233\264\346\226\271\345\233\276\345\235\207\350\241\241\345\214\226(I)", nullptr));
         actiondouble->setText(QCoreApplication::translate("DicomViewerDemoClass", "\345\217\214\351\230\210\345\200\274\345\210\206\345\211\262", nullptr));
+        actionHSV->setText(QCoreApplication::translate("DicomViewerDemoClass", "HSV\347\233\264\346\226\271\345\233\276\345\235\207\350\241\241\345\214\226\357\274\210V\357\274\211", nullptr));
         menufile->setTitle(QCoreApplication::translate("DicomViewerDemoClass", "\346\226\207\344\273\266", nullptr));
         menuedit->setTitle(QCoreApplication::translate("DicomViewerDemoClass", "\347\274\226\350\276\221", nullptr));
         menuview->setTitle(QCoreApplication::translate("DicomViewerDemoClass", "\350\247\206\345\233\276", nullptr));

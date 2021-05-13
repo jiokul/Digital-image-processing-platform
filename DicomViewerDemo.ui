@@ -1350,6 +1350,7 @@ QDateEdit::down-arrow:focus {
      <addaction name="actionEgray"/>
      <addaction name="RGBEaction"/>
      <addaction name="actionHSI"/>
+     <addaction name="actionHSV"/>
     </widget>
     <widget class="QMenu" name="menu_5">
      <property name="title">
@@ -1554,12 +1555,17 @@ QDateEdit::down-arrow:focus {
   </action>
   <action name="actionHSI">
    <property name="text">
-    <string>HSI空间直方图均衡化</string>
+    <string>HSI空间直方图均衡化(I)</string>
    </property>
   </action>
   <action name="actiondouble">
    <property name="text">
     <string>双阈值分割</string>
+   </property>
+  </action>
+  <action name="actionHSV">
+   <property name="text">
+    <string>HSV直方图均衡化（V）</string>
    </property>
   </action>
  </widget>

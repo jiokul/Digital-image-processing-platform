@@ -30,6 +30,7 @@ public:
 	~HSIEquation();
 public:
 	void changeimg();
+	//void changeimg2();
 	QImage HSIEimg(QString fileName, int a);
 	void OpenImg(QImage* img);
 	QImage* _img;

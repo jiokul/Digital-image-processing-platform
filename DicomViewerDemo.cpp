@@ -43,7 +43,7 @@
 #include "HSIEquation.h"
 #include "DoubleThreshold.h"
 #include "DoubleSubmit.h"
-
+#include "HSVEquation.h"
 using namespace std;
 QString openfile;
 QString filepath;
@@ -72,6 +72,7 @@ DicomViewerDemo::DicomViewerDemo(QWidget* parent)
 	connect(ui.actionPrewieet, SIGNAL(triggered()), this, SLOT(openprewitt()));
 	connect(ui.actionHSI, SIGNAL(triggered()), this, SLOT(openHSIequation()));
 	connect(ui.actiondouble, SIGNAL(triggered()), this, SLOT(opendoubletchreshold()));
+	connect(ui.actionHSV, SIGNAL(triggered()), this, SLOT(openHSVequation()));
 }
 
 DicomViewerDemo::~DicomViewerDemo()
@@ -187,7 +188,27 @@ void DicomViewerDemo::openHSIequation()
 	HSIimg->changeimg();
 	HSIimg->OpenImg(HSIimg->img_final);
 }
-
+void DicomViewerDemo::openHSVequation()
+{
+	if (openfile.isEmpty())
+	{
+		QMessageBox::information(NULL, "error", "请先打开文件");
+		return;
+	}
+	HSVEquation* HSIimg = new HSVEquation();
+	QPalette pal(HSIimg->palette());
+	//设置背景黑色
+	pal.setColor(QPalette::Background, Qt::black);
+	HSIimg->setAutoFillBackground(true);
+	HSIimg->setPalette(pal);
+	HSIimg->setAttribute(Qt::WA_DeleteOnClose);
+	HSIimg->show();
+	QImage img2 = HSIimg->HSVEimg(openfile, judgement);
+	HSIimg->_img = &img2;
+	HSIimg->changeimg();
+	HSIimg->changeimg2();
+	HSIimg->OpenImg(HSIimg->img_final1);
+}
 void DicomViewerDemo::opendoubletchreshold()
 {
 	if (openfile.isEmpty())

@@ -168,6 +168,94 @@ void HSIEquation::changeimg()
     
 }
 
+//void HSIEquation::changeimg2()
+//{
+//    int height = _img->height();
+//    int width = _img->width();
+//    qDebug() << height;
+//    qDebug() << width;
+//    int x;
+//    if (height > width)
+//    {
+//        x = height;
+//    }
+//    else
+//    {
+//        x = width;
+//    }
+//    img_final = new QImage(width, height, QImage::Format_RGB32);
+//    hsi** p = new hsi * [x];
+//    hsi** q = new hsi * [x];
+//    for (int i = 0; i < width; i++)
+//        p[i] = new hsi[x];
+//    for (int i = 0; i < width; i++)
+//        q[i] = new hsi[x];
+//    float max = 0;
+//    for (int i = 0; i < width; i++)
+//    {
+//        for (int j = 0; j < height; j++)
+//        {
+//            QRgb rgb = _img->pixel(i, j);
+//            RGBtoHSI(qRed(rgb), qGreen(rgb), qBlue(rgb), &p[i][j].h, &p[i][j].s, &p[i][j].i);
+//            //qDebug() << i;
+//            max = max > p[i][j].s ? max : p[i][j].s;
+//        }
+//    }
+//    qDebug() << max;
+//    //int n = (int)(max + 0.5);
+//    ////对分量I进行直方图均衡
+//    //int* II = new int[n + 1];
+//    //float* IIPro = new float[n + 1];
+//    //float* IITemp = new float[n + 1];
+//    //float* IIJun = new float[n + 1];
+//    //for (int i = 0; i <= n; i++)
+//    //    II[i] = 0;
+//    ////计算频率，即nk
+//    //for (int i = 0; i < width; i++)
+//    //{
+//    //    for (int j = 0; j < height; j++)
+//    //    {
+//    //        II[(int)(p[i][j].s + 0.5)]++;
+//    //    }
+//    //}
+//    ////计算每个数量级出现的概率
+//    //for (int i = 0; i <= n; i++)
+//    //{
+//    //    IIPro[i] = (II[i] * 1.0) / (width * height);
+//    //}
+//    ////概率累加并计算均值
+//    //IITemp[0] = IIPro[0];
+//    //for (int i = 1; i <= n; i++)
+//    //{
+//    //    IITemp[i] = IITemp[i - 1] + IIPro[i];
+//    //    IIJun[i] = n * IITemp[i];
+//    //}
+//    for (int i = 0; i < width; i++)
+//    {
+//        for (int j = 0; j < height; j++)
+//        {
+//            q[i][j].s = p[i][j].s * 6 - (p[i][j].s * p[i][j].s);
+//            q[i][j].i = p[i][j].i;
+//            q[i][j].h = p[i][j].h;
+//        }
+//    }
+//    qDebug() << max;
+//    for (int i = 0; i < width; i++)
+//    {
+//
+//        for (int j = 0; j < height; j++)
+//        {
+//            //p[i][j].s = IIJun[(int)(p[i][j].s + 0.5)];
+//            float r, g, b;
+//            HSItoRGB(q[i][j].h, q[i][j].s, q[i][j].i, &r, &g, &b);
+//            r = r > 255 ? 255 : (int)(r + 0.5);
+//            g = g > 255 ? 255 : (int)(g + 0.5);
+//            b = b > 255 ? 255 : (int)(b + 0.5);
+//            img_final->setPixel(i, j, qRgb(r, g, b));
+//        }
+//    }
+//}
+
 QImage HSIEquation::HSIEimg(QString fileName, int a)
 {
     if (a == 1)

@@ -115,6 +115,7 @@
     <ClCompile Include="Gpicture.cpp" />
     <ClCompile Include="grayview.cpp" />
     <ClCompile Include="HSIEquation.cpp" />
+    <ClCompile Include="HSVEquation.cpp" />
     <ClCompile Include="Invert_colour.cpp" />
     <ClCompile Include="MyLabel.cpp" />
     <ClCompile Include="Prewitt.cpp" />
@@ -145,6 +146,7 @@
     <QtUic Include="Gpicture.ui" />
     <QtUic Include="grayview.ui" />
     <QtUic Include="HSIEquation.ui" />
+    <QtUic Include="HSVEquation.ui" />
     <QtUic Include="Invert_colour.ui" />
     <QtUic Include="Prewitt.ui" />
     <QtUic Include="RGBEquation.ui" />
@@ -178,6 +180,7 @@
     <QtMoc Include="HSIEquation.h" />
     <QtMoc Include="DoubleThreshold.h" />
     <QtMoc Include="DoubleSubmit.h" />
+    <QtMoc Include="HSVEquation.h" />
     <ClInclude Include="ImageRender.h" />
     <QtMoc Include="Invert_colour.h" />
     <ClInclude Include="MyLabel.h" />

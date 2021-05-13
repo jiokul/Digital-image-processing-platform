@@ -116,6 +116,9 @@
     <ClCompile Include="DoubleSubmit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HSVEquation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="myVtkInteractorStyleImage.h">
@@ -201,6 +204,9 @@
     <QtMoc Include="DoubleSubmit.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="HSVEquation.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="ShowAllTag.ui">
@@ -267,6 +273,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="DoubleSubmit.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="HSVEquation.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

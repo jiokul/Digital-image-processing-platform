@@ -70,6 +70,7 @@ public slots:
 	void openblur();
 	void openprewitt();
 	void openHSIequation();
+	void openHSVequation();
 	void opendoubletchreshold();
 public:
 	QString currentDir = "NULL";//当前显示的文件路径
