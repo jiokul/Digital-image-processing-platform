@@ -115,7 +115,17 @@
    </item>
    <item>
     <property name="text">
+     <string>prewitt边缘检测</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
      <string>otsu图像分割</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>双阈值分割</string>
     </property>
    </item>
    <item>
@@ -126,6 +136,21 @@
    <item>
     <property name="text">
      <string>彩色直方图均衡化增强</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>HSI直方图均衡化增强</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>HSV直方图均衡化增强</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>图像反色</string>
     </property>
    </item>
   </widget>

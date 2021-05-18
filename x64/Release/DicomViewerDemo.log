@@ -1,2 +1,8 @@
-﻿  HSVEquation.cpp
+﻿  moc SAVE.h
+  DicomViewerDemo.cpp
+  SAVE.cpp
+D:\DicomViewer-list\DicomViewerDemo\x64\Release\uic\ui_Binariza.h(12,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符 (编译源文件 DicomViewerDemo.cpp)
+D:\DicomViewer-list\DicomViewerDemo\x64\Release\uic\ui_Binariza.h(12,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符 (编译源文件 SAVE.cpp)
+D:\DicomViewer-list\DicomViewerDemo\DicomViewerDemo.cpp(41,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  moc_SAVE.cpp
   DicomViewerDemo.vcxproj -> D:\DicomViewer-list\x64\Release\DicomViewerDemo.exe

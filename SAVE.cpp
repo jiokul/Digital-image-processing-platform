@@ -61,6 +61,13 @@
 #include "sharpen.h"
 #include "change.h"
 #include "blur.h"
+#include "Prewitt.h"
+#include "HSIEquation.h"
+#include "DoubleThreshold.h"
+#include "DoubleSubmit.h"
+#include "HSVEquation.h"
+#include "Invert_colour.h"
+#pragma execution_character_set("utf-8")//显示中文
 SAVE::SAVE(QWidget *parent)
 	: QWidget(parent)
 {
@@ -113,6 +120,7 @@ void SAVE::setimgway()
 
 void SAVE::settype1()
 {
+	flag1 = 1;
 	switch (type1)
 	{
 	case 0:ui.lineEdit_2->setText(QString::fromLocal8Bit("灰度图")); break;
@@ -120,14 +128,20 @@ void SAVE::settype1()
 	case 2:ui.lineEdit_2->setText(QString::fromLocal8Bit("高斯平滑")); break;
 	case 3:ui.lineEdit_2->setText(QString::fromLocal8Bit("图像锐化")); break;
 	case 4:ui.lineEdit_2->setText(QString::fromLocal8Bit("canny图像边缘检测")); break;
-	case 5:ui.lineEdit_2->setText(QString::fromLocal8Bit("otsu图像分割")); break;
-	case 6:ui.lineEdit_2->setText(QString::fromLocal8Bit("直方图均衡化增强")); break;
-	case 7:ui.lineEdit_2->setText(QString::fromLocal8Bit("彩色直方图均衡化增强")); break;
+	case 5:ui.lineEdit_2->setText(QString::fromLocal8Bit("prewitt图像边缘检测")); break;
+	case 6:ui.lineEdit_2->setText(QString::fromLocal8Bit("otsu图像分割")); break;
+	case 7:ui.lineEdit_2->setText(QString::fromLocal8Bit("双阈值图像分割")); break;
+	case 8:ui.lineEdit_2->setText(QString::fromLocal8Bit("直方图均衡化")); break;
+	case 9:ui.lineEdit_2->setText(QString::fromLocal8Bit("彩色直方图均衡化")); break;
+	case 10:ui.lineEdit_2->setText(QString::fromLocal8Bit("HSI直方图均衡化")); break;
+	case 11:ui.lineEdit_2->setText(QString::fromLocal8Bit("HSV直方图均衡化")); break;
+	case 12:ui.lineEdit_2->setText(QString::fromLocal8Bit("图像反色")); break;
 	}
 }
 
 void SAVE::settype2()
 {
+	flag = 1;
 	switch (type2)
 	{
 	case 0:ui.lineEdit_3->setText(QString::fromLocal8Bit("JPG格式")); break;
@@ -145,6 +159,27 @@ void SAVE::saveimg()
 {
 	if (openfile.isEmpty())
 	{
+		QMessageBox::information(NULL, "error", "请先打开图片");
+		return;
+	}
+	if (svaefile.isEmpty())
+	{
+		QMessageBox::information(NULL, "error", "请先选择保存路径");
+		return;
+	}
+	if (flag1 == 0)
+	{
+		QMessageBox::information(NULL, "error", "请先选择文件处理类型");
+		return;
+	}
+	if (flag == 0)
+	{
+		QMessageBox::information(NULL, "error", "请先选择保存类型");
+		return;
+	}
+	if (name.isEmpty())
+	{
+		QMessageBox::information(NULL, "error", "请先提交保存文件名");
 		return;
 	}
 	switch (type2)
@@ -160,9 +195,14 @@ void SAVE::saveimg()
 	case 2:getsmooth(); break;
 	case 3:getsharpen(); break;
 	case 4:gectcanny(); break;
-	case 5:getbinarize(); break;
-	case 6:getEgary(); break;
-	case 7:getrgbequantion(); break;
+	case 5:getprewitt(); break;
+	case 6:getbinarize(); break;
+	case 7:getdouble(); break;
+	case 8:getEgary(); break;
+	case 9:getrgbequantion(); break;
+	case 10:getHSI(); break;
+	case 11:getHSV(); break;
+	case 12:gettrun(); break;
 	}
 	this->close();
 	qDebug() << svaefile + "/" + name + "." + type;
@@ -172,6 +212,7 @@ void SAVE::getgray()
 {
 	if (openfile.isEmpty())
 	{
+		QMessageBox::information(NULL, "error", "请先打开图片");
 		return;
 	}
 	grayview* gimg = new grayview();
@@ -185,6 +226,7 @@ void SAVE::getEgary()
 {
 	if(openfile.isEmpty())
 	{
+		QMessageBox::information(NULL, "error", "请先打开图片");
 		return;
 	}
 	Egary* Eimg = new Egary();
@@ -201,6 +243,7 @@ void SAVE::getbinarize()
 {
 	if (openfile.isEmpty())
 	{
+		QMessageBox::information(NULL, "error", "请先打开图片");
 		return;
 	}
 	Binariza* Bimg = new Binariza();
@@ -218,6 +261,7 @@ void SAVE::gectcanny()
 {
 	if (openfile.isEmpty())
 	{
+		QMessageBox::information(NULL, "error", "请先打开图片");
 		return;
 	}
 	canny* Cimg = new canny();
@@ -236,7 +280,7 @@ void SAVE::getblur()
 {
 	if (openfile.isEmpty())
 	{
-		QMessageBox::information(NULL, "error", "请先打开文件");
+		QMessageBox::information(NULL, "error", "请先打开图片");
 		return;
 	}
 	blur* Simg = new blur();
@@ -251,6 +295,7 @@ void SAVE::getrgbequantion()
 {
 	if (openfile.isEmpty())
 	{
+		QMessageBox::information(NULL, "error", "请先打开图片");
 		return;
 	}
 	RGBEquation* RGBimg = new RGBEquation();
@@ -271,6 +316,7 @@ void SAVE::getsharpen()
 {
 	if (openfile.isEmpty())
 	{
+		QMessageBox::information(NULL, "error", "请先打开图片");
 		return;
 	}
 	sharpen* Simg = new sharpen();
@@ -285,6 +331,7 @@ void SAVE::getsmooth()
 {
 	if (openfile.isEmpty())
 	{
+		QMessageBox::information(NULL, "error", "请先打开图片");
 		return;
 	}
 	SmoothGauss* Simg = new SmoothGauss();
@@ -294,6 +341,83 @@ void SAVE::getsmooth()
 	QImage* SmoothGaussImg2 = Simg->getSmooth(SmoothGaussImg1);
 	SmoothGaussImg2->save(svaefile + "/" + name + "." + type);
 }
+
+void SAVE::getprewitt()
+{
+	if (openfile.isEmpty())
+	{
+		QMessageBox::information(NULL, "error", "请先打开图片");
+		return;
+	}
+	Prewitt* pimg = new Prewitt();
+	QImage img2 = pimg->preimg(openfile, type3);
+	pimg->_img = &img2;
+	pimg->grayScaleImg();
+	pimg->three = pimg->Otsu(pimg->img_gray);
+	qDebug() << pimg->three;
+	pimg->calculate();
+	pimg->img_final->save(svaefile + "/" + name + "." + type);
+}
+
+void SAVE::getdouble()
+{
+	if (openfile.isEmpty())
+	{
+		QMessageBox::information(NULL, "error", "请先打开图片");
+		return;
+	}
+	DoubleSubmit* Simg = new DoubleSubmit();
+	Simg->move(150, 200);
+	Simg->fileName = openfile;
+	Simg->type = type3;
+	Simg->show();
+}
+
+void SAVE::getHSI()
+{
+	if (openfile.isEmpty())
+	{
+		QMessageBox::information(NULL, "error", "请先打开图片");
+		return;
+	}
+	HSIEquation* HSIimg = new HSIEquation();
+	QImage img2 = HSIimg->HSIEimg(openfile, type3);
+	HSIimg->_img = &img2;
+	HSIimg->changeimg();
+	HSIimg->img_final->save(svaefile + "/" + name + "." + type);
+}
+
+void SAVE::getHSV()
+{
+	if (openfile.isEmpty())
+	{
+		QMessageBox::information(NULL, "error", "请先打开图片");
+		return;
+	}
+	HSVEquation* HSIimg = new HSVEquation();
+	QImage img2 = HSIimg->HSVEimg(openfile, type3);
+	HSIimg->_img = &img2;
+	HSIimg->changeimg();
+	HSIimg->changeimg2();
+	HSIimg->img_final1->save(svaefile + "/" + name + "." + type);
+}
+
+void SAVE::gettrun()
+{
+	if (openfile.isEmpty())
+	{
+		QMessageBox::information(NULL, "error", "请先打开图片");
+		return;
+	}
+	Invert_colour* Iimg = new Invert_colour();
+	QPalette pal(Iimg->palette());
+	QImage img2 = Iimg->colour(openfile, type3);
+	Iimg->_img = &img2;
+	Iimg->handling(Iimg->_img);
+	Iimg->newimg->save(svaefile + "/" + name + "." + type);
+}
+
+
 
 
 

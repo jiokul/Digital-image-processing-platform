@@ -25,6 +25,8 @@ public:
 	QString name;
 	QString openfile;
 	QString type;
+	int flag = 0;
+	int flag1 = 0;
 	int type1;
 	int type2;
 	int type3;
@@ -39,6 +41,11 @@ public:
 	void getrgbequantion();
 	void getsharpen();
 	void getsmooth();
+	void getprewitt();
+	void getdouble();
+	void getHSI();
+	void getHSV();
+	void gettrun();
 private:
 	Ui::SAVE ui;
 };

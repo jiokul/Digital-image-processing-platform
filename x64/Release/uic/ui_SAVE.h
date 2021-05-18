@@ -63,6 +63,11 @@ public:
         comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
         comboBox->setGeometry(QRect(10, 80, 93, 28));
         comboBox_2 = new QComboBox(SAVE);
@@ -90,9 +95,14 @@ public:
         comboBox->setItemText(2, QCoreApplication::translate("SAVE", "\351\253\230\346\226\257\345\271\263\346\273\221", nullptr));
         comboBox->setItemText(3, QCoreApplication::translate("SAVE", "\345\233\276\345\203\217\351\224\220\345\214\226", nullptr));
         comboBox->setItemText(4, QCoreApplication::translate("SAVE", "canny\350\276\271\347\274\230\346\243\200\346\265\213", nullptr));
-        comboBox->setItemText(5, QCoreApplication::translate("SAVE", "otsu\345\233\276\345\203\217\345\210\206\345\211\262", nullptr));
-        comboBox->setItemText(6, QCoreApplication::translate("SAVE", "\347\233\264\346\226\271\345\233\276\345\235\207\350\241\241\345\214\226\345\242\236\345\274\272", nullptr));
-        comboBox->setItemText(7, QCoreApplication::translate("SAVE", "\345\275\251\350\211\262\347\233\264\346\226\271\345\233\276\345\235\207\350\241\241\345\214\226\345\242\236\345\274\272", nullptr));
+        comboBox->setItemText(5, QCoreApplication::translate("SAVE", "prewitt\350\276\271\347\274\230\346\243\200\346\265\213", nullptr));
+        comboBox->setItemText(6, QCoreApplication::translate("SAVE", "otsu\345\233\276\345\203\217\345\210\206\345\211\262", nullptr));
+        comboBox->setItemText(7, QCoreApplication::translate("SAVE", "\345\217\214\351\230\210\345\200\274\345\210\206\345\211\262", nullptr));
+        comboBox->setItemText(8, QCoreApplication::translate("SAVE", "\347\233\264\346\226\271\345\233\276\345\235\207\350\241\241\345\214\226\345\242\236\345\274\272", nullptr));
+        comboBox->setItemText(9, QCoreApplication::translate("SAVE", "\345\275\251\350\211\262\347\233\264\346\226\271\345\233\276\345\235\207\350\241\241\345\214\226\345\242\236\345\274\272", nullptr));
+        comboBox->setItemText(10, QCoreApplication::translate("SAVE", "HSI\347\233\264\346\226\271\345\233\276\345\235\207\350\241\241\345\214\226\345\242\236\345\274\272", nullptr));
+        comboBox->setItemText(11, QCoreApplication::translate("SAVE", "HSV\347\233\264\346\226\271\345\233\276\345\235\207\350\241\241\345\214\226\345\242\236\345\274\272", nullptr));
+        comboBox->setItemText(12, QCoreApplication::translate("SAVE", "\345\233\276\345\203\217\345\217\215\350\211\262", nullptr));
 
         comboBox_2->setItemText(0, QCoreApplication::translate("SAVE", "JPG", nullptr));
         comboBox_2->setItemText(1, QCoreApplication::translate("SAVE", "PNG", nullptr));
