@@ -25,15 +25,23 @@
 #include "vtkImageShiftScale.h"
 #include "change.h"
 #include "DoubleSubmit.h"
+#include "Qsave.h"
 using namespace std;
 DoubleThreshold::DoubleThreshold(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+    connect(ui.pushButton, SIGNAL(clicked(bool)), this, SLOT(save()));
 }
 
 DoubleThreshold::~DoubleThreshold()
 {
+}
+void DoubleThreshold::save()
+{
+    Qsave* Qimg = new Qsave();
+    Qimg->final = img_final;
+    Qimg->show();
 }
 
 void DoubleThreshold::process(QImage* img)

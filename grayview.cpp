@@ -24,10 +24,12 @@
 #include "itkConnectedThresholdImageFilter.h"
 #include "vtkImageShiftScale.h"
 #include "change.h"
+#include "Qsave.h"
 grayview::grayview(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+    connect(ui.pushButton, SIGNAL(clicked(bool)), this, SLOT(save()));
 }
 
 grayview::~grayview()
@@ -41,7 +43,12 @@ void grayview::OpenImg(QImage* img)
 	ui.Gview->OnSelectImage(img);
 	ui.Gview->resize(QSize(image.width(), image.height()));
 }
-
+void grayview::save()
+{
+    Qsave* Qimg = new Qsave();
+    Qimg->final = img_final;
+    Qimg->show();
+}
 QImage grayview::gary(QString fileName,int a)
 {
     if (a == 1)

@@ -28,11 +28,14 @@ class blur : public QWidget
 public:
 	blur(QWidget *parent = Q_NULLPTR);
 	~blur();
+public slots:
+	void save();
 public:
 	QImage blurimg(QString imgPath, int a);
 	QImage* getblurimg(QImage* image);
 	void OpenImg(QImage* img);
 	QImage* _img;
+	QImage* img_final;
 private:
 	Ui::blur ui;
 };

@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 #include "MyLabel.h"
 
@@ -22,6 +23,7 @@ class Ui_HSIEquation
 public:
     QGridLayout *gridLayout;
     MyLabel *HSIview;
+    QPushButton *pushButton;
 
     void setupUi(QWidget *HSIEquation)
     {
@@ -35,7 +37,12 @@ public:
         HSIview = new MyLabel(HSIEquation);
         HSIview->setObjectName(QString::fromUtf8("HSIview"));
 
-        gridLayout->addWidget(HSIview, 0, 0, 1, 1);
+        gridLayout->addWidget(HSIview, 1, 0, 1, 1);
+
+        pushButton = new QPushButton(HSIEquation);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        gridLayout->addWidget(pushButton, 0, 0, 1, 1, Qt::AlignRight);
 
 
         retranslateUi(HSIEquation);
@@ -47,6 +54,7 @@ public:
     {
         HSIEquation->setWindowTitle(QCoreApplication::translate("HSIEquation", "HSIEquation", nullptr));
         HSIview->setText(QString());
+        pushButton->setText(QCoreApplication::translate("HSIEquation", "\344\277\235\345\255\230\345\233\276\347\211\207", nullptr));
     } // retranslateUi
 
 };

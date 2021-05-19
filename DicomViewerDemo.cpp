@@ -139,8 +139,8 @@ void DicomViewerDemo::openblur()
 	QImage img2 = Simg->blurimg(openfile, judgement);
 	Simg->_img = &img2;
 	QImage* SmoothGaussImg1 = Simg->_img;
-	QImage* SmoothGaussImg2 = Simg->getblurimg(SmoothGaussImg1);
-	Simg->OpenImg(SmoothGaussImg2);
+	Simg->img_final = Simg->getblurimg(SmoothGaussImg1);
+	Simg->OpenImg(Simg->img_final);
 }
 
 void DicomViewerDemo::openprewitt()
@@ -416,8 +416,8 @@ void DicomViewerDemo::openG()
 	gimg->show();
 	QImage img2 = gimg->gary(openfile,judgement);
 	gimg->_img = &img2;
-	QImage* grayImage = gimg->grayScaleImg();
-	gimg->OpenImg(grayImage);
+	gimg->img_final = gimg->grayScaleImg();
+	gimg->OpenImg(gimg->img_final);
 }
 
 
@@ -442,8 +442,8 @@ void DicomViewerDemo::openB()
 	int threshold = Bimg->Otsu(grayImage);    // 计算出的阈值
 	Bimg->threshold = threshold;
 	qDebug() << Bimg->threshold;
-	QImage* binaryImg = Bimg->process(grayImage);
-	Bimg->OpenImg(binaryImg);
+	Bimg->img_final = Bimg->process(grayImage);
+	Bimg->OpenImg(Bimg->img_final);
 }
 
 void DicomViewerDemo::openS()
@@ -464,8 +464,8 @@ void DicomViewerDemo::openS()
 	QImage img2 = Simg->Smooth(openfile, judgement);
 	Simg->_img = &img2;
 	QImage* SmoothGaussImg1 = Simg->_img;
-	QImage* SmoothGaussImg2 = Simg->getSmooth(SmoothGaussImg1);
-	Simg->OpenImg(SmoothGaussImg2);
+	Simg->img_final = Simg->getSmooth(SmoothGaussImg1);
+	Simg->OpenImg(Simg->img_final);
 }
 void DicomViewerDemo::openC()
 {
@@ -591,8 +591,8 @@ void DicomViewerDemo::openSH()
 	QImage img2 = Simg->sharpenimg(openfile, judgement);
 	Simg->_img = &img2;
 	QImage* SmoothGaussImg1 = Simg->_img;
-	QImage* SmoothGaussImg2 = Simg->getsharpenimg(SmoothGaussImg1);
-	Simg->OpenImg(SmoothGaussImg2);
+	Simg->img_final = Simg->getsharpenimg(SmoothGaussImg1);
+	Simg->OpenImg(Simg->img_final);
 }
 void DicomViewerDemo::openBT()
 {
@@ -615,7 +615,7 @@ void DicomViewerDemo::openBT()
 	int threshold = Bimg->Otsu(grayImage);    // 计算出的阈值
 	Bimg->threshold = threshold;
 	qDebug() << Bimg->threshold;
-	QImage* binaryImg = Bimg->process(grayImage);
-	Bimg->OpenImg(binaryImg);
+	Bimg->img_fianl = Bimg->process(grayImage);
+	Bimg->OpenImg(Bimg->img_fianl);
 }
 

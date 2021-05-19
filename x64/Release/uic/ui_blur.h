@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 #include "MyLabel.h"
 
@@ -22,6 +23,7 @@ class Ui_blur
 public:
     QGridLayout *gridLayout;
     MyLabel *label;
+    QPushButton *pushButton;
 
     void setupUi(QWidget *blur)
     {
@@ -35,7 +37,12 @@ public:
         label = new MyLabel(blur);
         label->setObjectName(QString::fromUtf8("label"));
 
-        gridLayout->addWidget(label, 0, 0, 1, 1);
+        gridLayout->addWidget(label, 1, 0, 1, 1);
+
+        pushButton = new QPushButton(blur);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        gridLayout->addWidget(pushButton, 0, 0, 1, 1, Qt::AlignRight);
 
 
         retranslateUi(blur);
@@ -47,6 +54,7 @@ public:
     {
         blur->setWindowTitle(QCoreApplication::translate("blur", "blur", nullptr));
         label->setText(QString());
+        pushButton->setText(QCoreApplication::translate("blur", "\344\277\235\345\255\230\345\233\276\347\211\207", nullptr));
     } // retranslateUi
 
 };

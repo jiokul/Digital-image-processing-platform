@@ -24,6 +24,7 @@
 #include "itkConnectedThresholdImageFilter.h"
 #include "vtkImageShiftScale.h"
 #include "change.h"
+#include "Qsave.h"
 Invert_colour::Invert_colour(QWidget *parent)
 	: QWidget(parent)
 {
@@ -40,6 +41,12 @@ void Invert_colour::OpenImg(QImage* img)
 	ui.label->clear();
 	ui.label->OnSelectImage(img);
 	ui.label->resize(QSize(image.width(), image.height()));
+}
+void Invert_colour::save()
+{
+    Qsave* Qimg = new Qsave();
+    Qimg->final = newimg;
+    Qimg->show();
 }
 
 void Invert_colour::handling(QImage* img)
@@ -61,6 +68,7 @@ void Invert_colour::handling(QImage* img)
     }
     newimg = EImg;
 }
+
 
 QImage Invert_colour::colour(QString fileName, int a)
 {

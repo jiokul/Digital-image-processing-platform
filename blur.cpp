@@ -24,11 +24,13 @@
 #include "itkConnectedThresholdImageFilter.h"
 #include "vtkImageShiftScale.h"
 #include "change.h"
+#include "Qsave.h"
 using namespace std;
 blur::blur(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+    connect(ui.pushButton, SIGNAL(clicked(bool)), this, SLOT(save()));
 }
 
 blur::~blur()
@@ -176,4 +178,10 @@ void blur::OpenImg(QImage* img)
     ui.label->clear();
     ui.label->OnSelectImage(img);;
     ui.label->resize(QSize(image.width(), image.height()));
+}
+void blur::save()
+{
+    Qsave* Qimg = new Qsave();
+    Qimg->final = img_final;
+    Qimg->show();
 }

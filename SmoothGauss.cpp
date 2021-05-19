@@ -24,11 +24,13 @@
 #include "itkConnectedThresholdImageFilter.h"
 #include "vtkImageShiftScale.h"
 #include "change.h"
+#include "Qsave.h"
 using namespace std;
 SmoothGauss::SmoothGauss(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+    connect(ui.pushButton, SIGNAL(clicked(bool)), this, SLOT(save()));
 }
 
 SmoothGauss::~SmoothGauss()
@@ -135,6 +137,12 @@ void SmoothGauss::OpenImg(QImage* img)
     ui.Sview->resize(QSize(image.width(), image.height()));
 }
 
+void SmoothGauss::save()
+{
+    Qsave* Qimg = new Qsave();
+    Qimg->final = img_final;
+    Qimg->show();
+}
 QImage SmoothGauss::Smooth(QString imgPath, int a)
 {
     if (a == 1)

@@ -28,6 +28,8 @@ class grayview : public QWidget
 public:
 	grayview(QWidget *parent = Q_NULLPTR);
 	~grayview();
+public slots:
+	void save();
 public:
 	void OpenImg(QImage* img);
 	QImage gary(QString fileName,int a);
@@ -35,6 +37,7 @@ public:
 	int     threshold;
 	QImage * _img;
 	QString LocalFileName;  //Í¼Æ¬Ãû
+	QImage* img_final;
 private:
 	Ui::grayview ui;
 };

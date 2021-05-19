@@ -119,6 +119,9 @@
     <ClCompile Include="HSVEquation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Qsave.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="myVtkInteractorStyleImage.h">
@@ -207,6 +210,9 @@
     <QtMoc Include="HSVEquation.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="Qsave.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="ShowAllTag.ui">
@@ -276,6 +282,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="HSVEquation.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="Qsave.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

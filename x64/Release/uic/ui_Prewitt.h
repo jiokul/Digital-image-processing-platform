@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 #include "MyLabel.h"
 
@@ -22,6 +23,7 @@ class Ui_Prewitt
 public:
     QGridLayout *gridLayout;
     MyLabel *Pview;
+    QPushButton *pushButton;
 
     void setupUi(QWidget *Prewitt)
     {
@@ -35,7 +37,12 @@ public:
         Pview = new MyLabel(Prewitt);
         Pview->setObjectName(QString::fromUtf8("Pview"));
 
-        gridLayout->addWidget(Pview, 0, 0, 1, 1);
+        gridLayout->addWidget(Pview, 1, 0, 1, 1);
+
+        pushButton = new QPushButton(Prewitt);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        gridLayout->addWidget(pushButton, 0, 0, 1, 1, Qt::AlignRight);
 
 
         retranslateUi(Prewitt);
@@ -47,6 +54,7 @@ public:
     {
         Prewitt->setWindowTitle(QCoreApplication::translate("Prewitt", "Prewitt", nullptr));
         Pview->setText(QString());
+        pushButton->setText(QCoreApplication::translate("Prewitt", "\344\277\235\345\255\230\345\233\276\347\211\207", nullptr));
     } // retranslateUi
 
 };

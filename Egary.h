@@ -28,6 +28,8 @@ class Egary : public QWidget
 public:
 	Egary(QWidget *parent = Q_NULLPTR);
 	~Egary();
+public slots:
+	void save();
 public:
 	void OpenImg(QImage* img);
 	void Equaliation();

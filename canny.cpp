@@ -24,6 +24,7 @@
 #include "itkConnectedThresholdImageFilter.h"
 #include "vtkImageShiftScale.h"
 #include "change.h"
+#include "Qsave.h"
 canny::canny(QWidget *parent)
 	: QWidget(parent)
 {
@@ -33,6 +34,7 @@ canny::canny(QWidget *parent)
     this->edge = qRgb(255, 255, 255);//±ßÔµÑÕÉ«
     this->resize(600, 800);
 	ui.setupUi(this);
+    connect(ui.pushButton, SIGNAL(clicked(bool)), this, SLOT(save()));
 }
 
 canny::~canny()
@@ -78,6 +80,12 @@ void canny::OpenImg(QImage* img)
     ui.Cview->clear();
     ui.Cview->OnSelectImage(img);
     ui.Cview->resize(QSize(image.width(), image.height()));
+}
+void canny::save()
+{
+    Qsave* Qimg = new Qsave();
+    Qimg->final = img_st;
+    Qimg->show();
 }
 
 void canny::Smooth()

@@ -28,6 +28,8 @@ class HSVEquation : public QWidget
 public:
 	HSVEquation(QWidget *parent = Q_NULLPTR);
 	~HSVEquation();
+public slots:
+	void save();
 public:
 	void changeimg();
 	void changeimg2();

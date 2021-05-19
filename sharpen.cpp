@@ -24,11 +24,13 @@
 #include "itkConnectedThresholdImageFilter.h"
 #include "vtkImageShiftScale.h"
 #include "change.h"
+#include "Qsave.h"
 using namespace std;
 sharpen::sharpen(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+    connect(ui.pushButton, SIGNAL(clicked(bool)), this, SLOT(save()));
 }
 
 sharpen::~sharpen()
@@ -175,4 +177,10 @@ void sharpen::OpenImg(QImage* img)
     ui.Sh_view->clear();
     ui.Sh_view->OnSelectImage(img);;
     ui.Sh_view->resize(QSize(image.width(), image.height()));
+}
+void sharpen::save()
+{
+    Qsave* Qimg = new Qsave();
+    Qimg->final = img_final;
+    Qimg->show();
 }

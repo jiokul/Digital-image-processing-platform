@@ -123,19 +123,19 @@ void SAVE::settype1()
 	flag1 = 1;
 	switch (type1)
 	{
-	case 0:ui.lineEdit_2->setText(QString::fromLocal8Bit("灰度图")); break;
-	case 1:ui.lineEdit_2->setText(QString::fromLocal8Bit("图像模糊")); break;
-	case 2:ui.lineEdit_2->setText(QString::fromLocal8Bit("高斯平滑")); break;
-	case 3:ui.lineEdit_2->setText(QString::fromLocal8Bit("图像锐化")); break;
-	case 4:ui.lineEdit_2->setText(QString::fromLocal8Bit("canny图像边缘检测")); break;
-	case 5:ui.lineEdit_2->setText(QString::fromLocal8Bit("prewitt图像边缘检测")); break;
-	case 6:ui.lineEdit_2->setText(QString::fromLocal8Bit("otsu图像分割")); break;
-	case 7:ui.lineEdit_2->setText(QString::fromLocal8Bit("双阈值图像分割")); break;
-	case 8:ui.lineEdit_2->setText(QString::fromLocal8Bit("直方图均衡化")); break;
-	case 9:ui.lineEdit_2->setText(QString::fromLocal8Bit("彩色直方图均衡化")); break;
-	case 10:ui.lineEdit_2->setText(QString::fromLocal8Bit("HSI直方图均衡化")); break;
-	case 11:ui.lineEdit_2->setText(QString::fromLocal8Bit("HSV直方图均衡化")); break;
-	case 12:ui.lineEdit_2->setText(QString::fromLocal8Bit("图像反色")); break;
+	case 0:ui.lineEdit_2->setText("灰度图"); break;
+	case 1:ui.lineEdit_2->setText("图像模糊"); break;
+	case 2:ui.lineEdit_2->setText("高斯平滑"); break;
+	case 3:ui.lineEdit_2->setText("图像锐化"); break;
+	case 4:ui.lineEdit_2->setText("canny图像边缘检测"); break;
+	case 5:ui.lineEdit_2->setText("prewitt图像边缘检测"); break;
+	case 6:ui.lineEdit_2->setText("otsu图像分割"); break;
+	case 7:ui.lineEdit_2->setText("双阈值图像分割"); break;
+	case 8:ui.lineEdit_2->setText("直方图均衡化"); break;
+	case 9:ui.lineEdit_2->setText("彩色直方图均衡化"); break;
+	case 10:ui.lineEdit_2->setText("HSI直方图均衡化"); break;
+	case 11:ui.lineEdit_2->setText("HSV直方图均衡化"); break;
+	case 12:ui.lineEdit_2->setText("图像反色"); break;
 	}
 }
 
@@ -144,9 +144,9 @@ void SAVE::settype2()
 	flag = 1;
 	switch (type2)
 	{
-	case 0:ui.lineEdit_3->setText(QString::fromLocal8Bit("JPG格式")); break;
-	case 1:ui.lineEdit_3->setText(QString::fromLocal8Bit("PNG格式")); break;
-	case 2:ui.lineEdit_3->setText(QString::fromLocal8Bit("BMP格式")); break;
+	case 0:ui.lineEdit_3->setText("JPG格式"); break;
+	case 1:ui.lineEdit_3->setText("PNG格式"); break;
+	case 2:ui.lineEdit_3->setText("BMP格式"); break;
 	}
 }
 
@@ -220,6 +220,7 @@ void SAVE::getgray()
 	gimg->_img = &img2;
 	QImage* grayImage = gimg->grayScaleImg();
 	grayImage->save(svaefile+"/"+ name+"."+type);
+	QMessageBox::information(NULL, "success", "保存成功");
 }
 
 void SAVE::getEgary()
@@ -237,6 +238,7 @@ void SAVE::getEgary()
 	qDebug() << Eimg->hist;
 	Eimg->Equaliation();
 	Eimg->imgE->save(svaefile + "/" + name + "." + type);
+	QMessageBox::information(NULL, "success", "保存成功");
 }
 
 void SAVE::getbinarize()
@@ -255,6 +257,7 @@ void SAVE::getbinarize()
 	qDebug() << Bimg->threshold;
 	QImage* binaryImg = Bimg->process(grayImage);
 	binaryImg->save(svaefile + "/" + name + "." + type);
+	QMessageBox::information(NULL, "success", "保存成功");
 }
 
 void SAVE::gectcanny()
@@ -274,6 +277,7 @@ void SAVE::gectcanny()
 	Cimg->bt();
 	Cimg->st();
 	Cimg->img_st->save(svaefile + "/" + name + "." + type);
+	QMessageBox::information(NULL, "success", "保存成功");
 }
 
 void SAVE::getblur()
@@ -289,6 +293,7 @@ void SAVE::getblur()
 	QImage* SmoothGaussImg1 = Simg->_img;
 	QImage* SmoothGaussImg2 = Simg->getblurimg(SmoothGaussImg1);
 	SmoothGaussImg2->save(svaefile + "/" + name + "." + type);
+	QMessageBox::information(NULL, "success", "保存成功");
 }
 
 void SAVE::getrgbequantion()
@@ -310,6 +315,7 @@ void SAVE::getrgbequantion()
 	qDebug() << RGBimg->newghist[0];
 	qDebug() << RGBimg->newbhist[0];
 	RGBimg->imgE->save(svaefile + "/" + name + "." + type);
+	QMessageBox::information(NULL, "success", "保存成功");
 }
 
 void SAVE::getsharpen()
@@ -325,6 +331,7 @@ void SAVE::getsharpen()
 	QImage* SmoothGaussImg1 = Simg->_img;
 	QImage* SmoothGaussImg2 = Simg->getsharpenimg(SmoothGaussImg1);
 	SmoothGaussImg2->save(svaefile + "/" + name + "." + type);
+	QMessageBox::information(NULL, "success", "保存成功");
 }
 
 void SAVE::getsmooth()
@@ -340,6 +347,7 @@ void SAVE::getsmooth()
 	QImage* SmoothGaussImg1 = Simg->_img;
 	QImage* SmoothGaussImg2 = Simg->getSmooth(SmoothGaussImg1);
 	SmoothGaussImg2->save(svaefile + "/" + name + "." + type);
+	QMessageBox::information(NULL, "success", "保存成功");
 }
 
 void SAVE::getprewitt()
@@ -357,6 +365,7 @@ void SAVE::getprewitt()
 	qDebug() << pimg->three;
 	pimg->calculate();
 	pimg->img_final->save(svaefile + "/" + name + "." + type);
+	QMessageBox::information(NULL, "success", "保存成功");
 }
 
 void SAVE::getdouble()
@@ -385,6 +394,7 @@ void SAVE::getHSI()
 	HSIimg->_img = &img2;
 	HSIimg->changeimg();
 	HSIimg->img_final->save(svaefile + "/" + name + "." + type);
+	QMessageBox::information(NULL, "success", "保存成功");
 }
 
 void SAVE::getHSV()
@@ -400,6 +410,7 @@ void SAVE::getHSV()
 	HSIimg->changeimg();
 	HSIimg->changeimg2();
 	HSIimg->img_final1->save(svaefile + "/" + name + "." + type);
+	QMessageBox::information(NULL, "success", "保存成功");
 }
 
 void SAVE::gettrun()
@@ -415,6 +426,7 @@ void SAVE::gettrun()
 	Iimg->_img = &img2;
 	Iimg->handling(Iimg->_img);
 	Iimg->newimg->save(svaefile + "/" + name + "." + type);
+	QMessageBox::information(NULL, "success", "保存成功");
 }
 
 

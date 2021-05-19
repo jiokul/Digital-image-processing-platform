@@ -9,10 +9,11 @@
 #ifndef UI_BINARIZA_H
 #define UI_BINARIZA_H
 
-#include "MyLabel.h""
+#include "MyLabel.h"
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -22,6 +23,7 @@ class Ui_Binariza
 public:
     QGridLayout *gridLayout;
     MyLabel *LBview;
+    QPushButton *pushButton;
 
     void setupUi(QWidget *Binariza)
     {
@@ -37,7 +39,12 @@ public:
         LBview->setObjectName(QString::fromUtf8("LBview"));
         LBview->setBaseSize(QSize(800, 600));
 
-        gridLayout->addWidget(LBview, 0, 0, 1, 1);
+        gridLayout->addWidget(LBview, 1, 0, 1, 1);
+
+        pushButton = new QPushButton(Binariza);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        gridLayout->addWidget(pushButton, 0, 0, 1, 1, Qt::AlignRight);
 
 
         retranslateUi(Binariza);
@@ -49,6 +56,7 @@ public:
     {
         Binariza->setWindowTitle(QCoreApplication::translate("Binariza", "Binariza", nullptr));
         LBview->setText(QString());
+        pushButton->setText(QCoreApplication::translate("Binariza", "\344\277\235\345\255\230", nullptr));
     } // retranslateUi
 
 };

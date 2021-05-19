@@ -24,7 +24,9 @@
 #include "itkConnectedThresholdImageFilter.h"
 #include "vtkImageShiftScale.h"
 #include "change.h"
+#include "Qsave.h"
 using namespace std;
+
 typedef struct HSI {
     float h;
     float s;
@@ -34,6 +36,7 @@ HSIEquation::HSIEquation(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+    connect(ui.pushButton, SIGNAL(clicked(bool)), this, SLOT(save()));
 }
 HSIEquation::~HSIEquation()
 {
@@ -297,6 +300,12 @@ QImage HSIEquation::HSIEimg(QString fileName, int a)
         QImage  image = getqimage(VTKImage->GetOutput());
         return image;
     }
+}
+void HSIEquation::save()
+{
+    Qsave* Qimg = new Qsave();
+    Qimg->final = img_final;
+    Qimg->show();
 }
 
 void HSIEquation::OpenImg(QImage* img)

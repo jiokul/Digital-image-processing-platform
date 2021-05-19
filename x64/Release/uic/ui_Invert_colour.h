@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 #include "MyLabel.h"
 
@@ -22,6 +23,7 @@ class Ui_Invert_colour
 public:
     QGridLayout *gridLayout;
     MyLabel *label;
+    QPushButton *pushButton;
 
     void setupUi(QWidget *Invert_colour)
     {
@@ -35,7 +37,12 @@ public:
         label = new MyLabel(Invert_colour);
         label->setObjectName(QString::fromUtf8("label"));
 
-        gridLayout->addWidget(label, 0, 0, 1, 1);
+        gridLayout->addWidget(label, 1, 0, 1, 1);
+
+        pushButton = new QPushButton(Invert_colour);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        gridLayout->addWidget(pushButton, 0, 0, 1, 1, Qt::AlignRight);
 
 
         retranslateUi(Invert_colour);
@@ -47,6 +54,7 @@ public:
     {
         Invert_colour->setWindowTitle(QCoreApplication::translate("Invert_colour", "Invert_colour", nullptr));
         label->setText(QString());
+        pushButton->setText(QCoreApplication::translate("Invert_colour", "\344\277\235\345\255\230\345\233\276\347\211\207", nullptr));
     } // retranslateUi
 
 };

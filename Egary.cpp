@@ -24,11 +24,13 @@
 #include "itkConnectedThresholdImageFilter.h"
 #include "vtkImageShiftScale.h"
 #include "change.h"
+#include "Qsave.h"
 using namespace std;
 Egary::Egary(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+    connect(ui.pushButton, SIGNAL(clicked(bool)), this, SLOT(save()));
 }
 
 Egary::~Egary()
@@ -107,7 +109,12 @@ void Egary::Equaliation()
     imgE = EImg;
     qDebug() << newxs[0];
 }
-
+void Egary::save()
+{
+    Qsave* Qimg = new Qsave();
+    Qimg->final = imgE;
+    Qimg->show();
+}
 QImage Egary::Egaryimg(QString fileName, int a)
 {
     if (a == 1)

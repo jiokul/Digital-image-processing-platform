@@ -28,11 +28,14 @@ class sharpen : public QWidget
 public:
 	sharpen(QWidget *parent = Q_NULLPTR);
 	~sharpen();
+public slots:
+	void save();
 public:
 	QImage sharpenimg(QString imgPath, int a);
 	QImage* getsharpenimg(QImage* image);
 	void OpenImg(QImage* img);
 	QImage* _img;
+	QImage* img_final;
 private:
 	Ui::sharpen ui;
 };

@@ -120,6 +120,7 @@
     <ClCompile Include="MyLabel.cpp" />
     <ClCompile Include="Prewitt.cpp" />
     <ClCompile Include="qcustomplot.cpp" />
+    <ClCompile Include="Qsave.cpp" />
     <ClCompile Include="RGBEquation.cpp" />
     <ClCompile Include="SAVE.cpp" />
     <ClCompile Include="screenShotClass.cpp" />
@@ -149,6 +150,7 @@
     <QtUic Include="HSVEquation.ui" />
     <QtUic Include="Invert_colour.ui" />
     <QtUic Include="Prewitt.ui" />
+    <QtUic Include="Qsave.ui" />
     <QtUic Include="RGBEquation.ui" />
     <QtUic Include="SAVE.ui" />
     <QtUic Include="screenShotClass.ui" />
@@ -160,6 +162,7 @@
     <QtUic Include="WindowColorDefined.ui" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="Qsave.h" />
     <QtMoc Include="SAVE.h" />
     <QtMoc Include="sharpen.h" />
     <QtMoc Include="start2.h" />

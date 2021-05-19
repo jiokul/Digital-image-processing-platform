@@ -24,6 +24,7 @@
 #include "itkConnectedThresholdImageFilter.h"
 #include "vtkImageShiftScale.h"
 #include "change.h"
+#include "Qsave.h"
 using namespace std;
 typedef struct HSV {
 	float h;
@@ -34,6 +35,7 @@ HSVEquation::HSVEquation(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+	connect(ui.pushButton, SIGNAL(clicked(bool)), this, SLOT(save()));
 }
 
 HSVEquation::~HSVEquation()
@@ -236,7 +238,12 @@ void HSVEquation::changeimg()
 		}
 	}
 }
-
+void HSVEquation::save()
+{
+	Qsave* Qimg = new Qsave();
+	Qimg->final = img_final1;
+	Qimg->show();
+}
 void HSVEquation::changeimg2()
 {
 	int height = _img->height();

@@ -29,6 +29,8 @@ class DoubleThreshold : public QWidget
 public:
 	DoubleThreshold(QWidget *parent = Q_NULLPTR);
 	~DoubleThreshold();
+public slots:
+	void save();
 public:
 	void process(QImage* img);
 	QImage Doubleimg(QString fileName, int a);

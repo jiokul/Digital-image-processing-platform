@@ -28,6 +28,8 @@ class HSIEquation : public QWidget
 public:
 	HSIEquation(QWidget *parent = Q_NULLPTR);
 	~HSIEquation();
+public slots:
+	void save();
 public:
 	void changeimg();
 	//void changeimg2();

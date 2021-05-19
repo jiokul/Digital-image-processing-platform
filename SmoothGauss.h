@@ -29,11 +29,14 @@ class SmoothGauss : public QWidget
 public:
 	SmoothGauss(QWidget *parent = Q_NULLPTR);
 	~SmoothGauss();
+public slots:
+	void save();
 public:
 	QImage Smooth(QString imgPath,int a);
 	QImage* getSmooth(QImage* image);
 	void OpenImg(QImage* img);
 	QImage* _img;
+	QImage* img_final;
 private:
 	Ui::SmoothGauss ui;
 };

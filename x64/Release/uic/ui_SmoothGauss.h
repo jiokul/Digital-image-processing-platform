@@ -13,6 +13,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -22,6 +23,7 @@ class Ui_SmoothGauss
 public:
     QGridLayout *gridLayout;
     MyLabel *Sview;
+    QPushButton *pushButton;
 
     void setupUi(QWidget *SmoothGauss)
     {
@@ -35,7 +37,12 @@ public:
         Sview = new MyLabel(SmoothGauss);
         Sview->setObjectName(QString::fromUtf8("Sview"));
 
-        gridLayout->addWidget(Sview, 0, 0, 1, 1);
+        gridLayout->addWidget(Sview, 1, 0, 1, 1);
+
+        pushButton = new QPushButton(SmoothGauss);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        gridLayout->addWidget(pushButton, 0, 0, 1, 1, Qt::AlignRight);
 
 
         retranslateUi(SmoothGauss);
@@ -47,6 +54,7 @@ public:
     {
         SmoothGauss->setWindowTitle(QCoreApplication::translate("SmoothGauss", "SmoothGauss", nullptr));
         Sview->setText(QString());
+        pushButton->setText(QCoreApplication::translate("SmoothGauss", "\344\277\235\345\255\230\345\233\276\347\211\207", nullptr));
     } // retranslateUi
 
 };

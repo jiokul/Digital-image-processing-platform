@@ -24,10 +24,12 @@
 #include "itkConnectedThresholdImageFilter.h"
 #include "vtkImageShiftScale.h"
 #include "change.h"
+#include "Qsave.h"
 Binariza_turn::Binariza_turn(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+    connect(ui.pushButton, SIGNAL(clicked(bool)), this, SLOT(save()));
 }
 
 Binariza_turn::~Binariza_turn()
@@ -40,6 +42,12 @@ void Binariza_turn::OpenImg(QImage* img)
 	ui.label->clear();
 	ui.label->OnSelectImage(img);
 	ui.label->resize(QSize(image.width(), image.height()));
+}
+void Binariza_turn::save()
+{
+    Qsave* Qimg = new Qsave();
+    Qimg->final = img_fianl;
+    Qimg->show();
 }
 
 QImage Binariza_turn::binary(QString fileName, int a)

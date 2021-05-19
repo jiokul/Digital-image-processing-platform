@@ -14,10 +14,17 @@
    <string>DoubleThreshold</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
+   <item row="1" column="0">
     <widget class="MyLabel" name="label">
      <property name="text">
       <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" alignment="Qt::AlignRight">
+    <widget class="QPushButton" name="pushButton">
+     <property name="text">
+      <string>保存图片</string>
      </property>
     </widget>
    </item>

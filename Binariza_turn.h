@@ -28,6 +28,8 @@ class Binariza_turn : public QWidget
 public:
 	Binariza_turn(QWidget *parent = Q_NULLPTR);
 	~Binariza_turn();
+public slots:
+	void save();
 public:
 	void OpenImg(QImage* img);
 	QImage binary(QString fileName, int a);
@@ -38,6 +40,7 @@ public:
 	QImage* _img;
 	QString LocalFileName;  //Í¼Æ¬Ãû
 	vector<int> Histogram(QImage* img);
+	QImage* img_fianl;
 
 private:
 	Ui::Binariza_turn ui;

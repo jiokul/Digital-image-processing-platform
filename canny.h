@@ -28,6 +28,8 @@ class canny : public QWidget
 public:
 	canny(QWidget *parent = Q_NULLPTR);
 	~canny();
+public slots:
+	void save();
 public:
 	QImage cannyimg(QString fileName, int a);
 	QImage* _img;

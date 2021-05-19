@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 #include "mylabel.h"
 
@@ -22,6 +23,7 @@ class Ui_Equalization
 public:
     QGridLayout *gridLayout;
     MyLabel *Eview;
+    QPushButton *pushButton;
 
     void setupUi(QWidget *Equalization)
     {
@@ -35,7 +37,12 @@ public:
         Eview = new MyLabel(Equalization);
         Eview->setObjectName(QString::fromUtf8("Eview"));
 
-        gridLayout->addWidget(Eview, 0, 0, 1, 1);
+        gridLayout->addWidget(Eview, 1, 0, 1, 1);
+
+        pushButton = new QPushButton(Equalization);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        gridLayout->addWidget(pushButton, 0, 0, 1, 1, Qt::AlignRight);
 
 
         retranslateUi(Equalization);
@@ -47,6 +54,7 @@ public:
     {
         Equalization->setWindowTitle(QCoreApplication::translate("Equalization", "Equalization", nullptr));
         Eview->setText(QString());
+        pushButton->setText(QCoreApplication::translate("Equalization", "\344\277\235\345\255\230\345\233\276\347\211\207", nullptr));
     } // retranslateUi
 
 };

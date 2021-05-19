@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 #include "MyLabel.h"
 
@@ -22,6 +23,7 @@ class Ui_RGBEquation
 public:
     QGridLayout *gridLayout;
     MyLabel *RGBlabel;
+    QPushButton *pushButton;
 
     void setupUi(QWidget *RGBEquation)
     {
@@ -35,7 +37,12 @@ public:
         RGBlabel = new MyLabel(RGBEquation);
         RGBlabel->setObjectName(QString::fromUtf8("RGBlabel"));
 
-        gridLayout->addWidget(RGBlabel, 0, 0, 1, 1);
+        gridLayout->addWidget(RGBlabel, 1, 0, 1, 1);
+
+        pushButton = new QPushButton(RGBEquation);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        gridLayout->addWidget(pushButton, 0, 0, 1, 1, Qt::AlignRight);
 
 
         retranslateUi(RGBEquation);
@@ -47,6 +54,7 @@ public:
     {
         RGBEquation->setWindowTitle(QCoreApplication::translate("RGBEquation", "RGBEquation", nullptr));
         RGBlabel->setText(QString());
+        pushButton->setText(QCoreApplication::translate("RGBEquation", "\344\277\235\345\255\230\345\233\276\347\211\207", nullptr));
     } // retranslateUi
 
 };

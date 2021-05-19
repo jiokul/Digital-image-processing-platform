@@ -28,7 +28,8 @@ class Binariza : public QWidget
 public:
 	Binariza(QWidget *parent = Q_NULLPTR);
 	~Binariza();
-
+public slots:
+	void save();
 public:
 	void OpenImg(QImage *img);
 	QImage binary(QString fileName,int a);
@@ -37,8 +38,15 @@ public:
 	QImage* process(QImage* img);
 	int     threshold;
 	QImage* _img;
+	QImage* img_final;
 	QString LocalFileName;  //Í¼Æ¬Ãû
 	vector<int> Histogram(QImage* img);
+	QString svaefile;
+	QString name;
+	QString type;
+	int type1;
+	int type2;
+	int type3;
 private:
 	Ui::Binariza ui;
 };

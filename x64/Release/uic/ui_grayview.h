@@ -13,6 +13,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -22,6 +23,7 @@ class Ui_grayview
 public:
     QGridLayout *gridLayout;
     MyLabel *Gview;
+    QPushButton *pushButton;
 
     void setupUi(QWidget *grayview)
     {
@@ -36,7 +38,12 @@ public:
         Gview = new MyLabel(grayview);
         Gview->setObjectName(QString::fromUtf8("Gview"));
 
-        gridLayout->addWidget(Gview, 0, 0, 1, 1);
+        gridLayout->addWidget(Gview, 1, 0, 1, 1);
+
+        pushButton = new QPushButton(grayview);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        gridLayout->addWidget(pushButton, 0, 0, 1, 1, Qt::AlignRight);
 
 
         retranslateUi(grayview);
@@ -48,6 +55,7 @@ public:
     {
         grayview->setWindowTitle(QCoreApplication::translate("grayview", "grayview", nullptr));
         Gview->setText(QString());
+        pushButton->setText(QCoreApplication::translate("grayview", "\344\277\235\345\255\230\345\233\276\347\211\207", nullptr));
     } // retranslateUi
 
 };

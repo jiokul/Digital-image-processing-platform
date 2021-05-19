@@ -6,192 +6,136 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>394</width>
-    <height>259</height>
+    <width>573</width>
+    <height>437</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>SAVE</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>30</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>选择路径</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>30</y>
-     <width>251</width>
-     <height>28</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>80</y>
-     <width>251</width>
-     <height>28</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>130</y>
-     <width>251</width>
-     <height>28</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_4">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>180</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>提交图片名称</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_4">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>180</y>
-     <width>251</width>
-     <height>28</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBox">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>80</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <item>
-    <property name="text">
-     <string>灰度图</string>
-    </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QPushButton" name="pushButton">
+     <property name="text">
+      <string>选择路径</string>
+     </property>
+    </widget>
    </item>
-   <item>
-    <property name="text">
-     <string>图项模糊</string>
-    </property>
+   <item row="3" column="1">
+    <widget class="QLineEdit" name="lineEdit_4"/>
    </item>
-   <item>
-    <property name="text">
-     <string>高斯平滑</string>
-    </property>
+   <item row="3" column="0">
+    <widget class="QPushButton" name="pushButton_4">
+     <property name="text">
+      <string>提交图片名称</string>
+     </property>
+    </widget>
    </item>
-   <item>
-    <property name="text">
-     <string>图像锐化</string>
-    </property>
+   <item row="2" column="0">
+    <widget class="QComboBox" name="comboBox_2">
+     <item>
+      <property name="text">
+       <string>JPG</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>PNG</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BMP</string>
+      </property>
+     </item>
+    </widget>
    </item>
-   <item>
-    <property name="text">
-     <string>canny边缘检测</string>
-    </property>
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="lineEdit"/>
    </item>
-   <item>
-    <property name="text">
-     <string>prewitt边缘检测</string>
-    </property>
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="lineEdit_2"/>
    </item>
-   <item>
-    <property name="text">
-     <string>otsu图像分割</string>
-    </property>
+   <item row="2" column="1">
+    <widget class="QLineEdit" name="lineEdit_3"/>
    </item>
-   <item>
-    <property name="text">
-     <string>双阈值分割</string>
-    </property>
+   <item row="1" column="0">
+    <widget class="QComboBox" name="comboBox">
+     <item>
+      <property name="text">
+       <string>灰度图</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>图项模糊</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>高斯平滑</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>图像锐化</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>canny边缘检测</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>prewitt边缘检测</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>otsu图像分割</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>双阈值分割</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>直方图均衡化增强</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>彩色直方图均衡化增强</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>HSI直方图均衡化增强</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>HSV直方图均衡化增强</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>图像反色</string>
+      </property>
+     </item>
+    </widget>
    </item>
-   <item>
-    <property name="text">
-     <string>直方图均衡化增强</string>
-    </property>
+   <item row="4" column="1" alignment="Qt::AlignLeft">
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="text">
+      <string>保存</string>
+     </property>
+    </widget>
    </item>
-   <item>
-    <property name="text">
-     <string>彩色直方图均衡化增强</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>HSI直方图均衡化增强</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>HSV直方图均衡化增强</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>图像反色</string>
-    </property>
-   </item>
-  </widget>
-  <widget class="QComboBox" name="comboBox_2">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>130</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <item>
-    <property name="text">
-     <string>JPG</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>PNG</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>BMP</string>
-    </property>
-   </item>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>220</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>保存</string>
-   </property>
-  </widget>
+  </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

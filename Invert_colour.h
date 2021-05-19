@@ -28,6 +28,8 @@ class Invert_colour : public QWidget
 public:
 	Invert_colour(QWidget *parent = Q_NULLPTR);
 	~Invert_colour();
+public slots:
+	void save();
 public:
 	void OpenImg(QImage* img);
 	QImage* newimg; 

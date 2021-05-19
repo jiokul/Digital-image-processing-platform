@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 #include "MyLabel.h"
 
@@ -22,6 +23,7 @@ class Ui_sharpen
 public:
     QGridLayout *gridLayout;
     MyLabel *Sh_view;
+    QPushButton *pushButton;
 
     void setupUi(QWidget *sharpen)
     {
@@ -35,7 +37,12 @@ public:
         Sh_view = new MyLabel(sharpen);
         Sh_view->setObjectName(QString::fromUtf8("Sh_view"));
 
-        gridLayout->addWidget(Sh_view, 0, 0, 1, 1);
+        gridLayout->addWidget(Sh_view, 1, 0, 1, 1);
+
+        pushButton = new QPushButton(sharpen);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        gridLayout->addWidget(pushButton, 0, 0, 1, 1, Qt::AlignRight);
 
 
         retranslateUi(sharpen);
@@ -47,6 +54,7 @@ public:
     {
         sharpen->setWindowTitle(QCoreApplication::translate("sharpen", "sharpen", nullptr));
         Sh_view->setText(QString());
+        pushButton->setText(QCoreApplication::translate("sharpen", "\344\277\235\345\255\230\345\233\276\347\211\207", nullptr));
     } // retranslateUi
 
 };
