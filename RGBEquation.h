@@ -28,6 +28,8 @@ class RGBEquation : public QWidget
 public:
 	RGBEquation(QWidget* parent = Q_NULLPTR);
 	~RGBEquation();
+public slots:
+	void save();
 public:
 	void OpenImg(QImage* img);
 	void Equaliationr(vector<float> hist);

@@ -24,11 +24,13 @@
 #include "itkConnectedThresholdImageFilter.h"
 #include "vtkImageShiftScale.h"
 #include "change.h"
+#include "Qsave.h"
 using namespace std;
 RGBEquation::RGBEquation(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+    connect(ui.pushButton, SIGNAL(clicked(bool)), this, SLOT(save()));
 }
 
 RGBEquation::~RGBEquation()
@@ -83,6 +85,13 @@ void  RGBEquation::Equaliationr(vector<float> hist)
         newrhist[i] = int((max - min) * chancesum[i] + 0.5);
     }
     qDebug() << newrhist[0];
+}
+
+void RGBEquation::save()
+{
+    Qsave* Qimg = new Qsave();
+    Qimg->final = imgE;
+    Qimg->show();
 }
 
 void RGBEquation::Equaliationg(vector<float> hist)

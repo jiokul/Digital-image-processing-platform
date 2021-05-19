@@ -28,6 +28,8 @@ class Prewitt : public QWidget
 public:
 	Prewitt(QWidget *parent = Q_NULLPTR);
 	~Prewitt();
+public slots:
+	void save();
 public:
 	QImage preimg(QString fileName, int a);
 	void calculate();

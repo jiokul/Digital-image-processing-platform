@@ -24,16 +24,24 @@
 #include "itkConnectedThresholdImageFilter.h"
 #include "vtkImageShiftScale.h"
 #include "change.h"
+#include "Qsave.h"
 Prewitt::Prewitt(QWidget *parent)
 	: QWidget(parent)
 {
     this->notedge = qRgb(0, 0, 0);//·Ç±ßÔµÑÕÉ«
     this->edge = qRgb(255, 255, 255);//±ßÔµÑÕÉ«
 	ui.setupUi(this);
+    connect(ui.pushButton, SIGNAL(clicked(bool)), this, SLOT(save()));
 }
 
 Prewitt::~Prewitt()
 {
+}
+void Prewitt::save()
+{
+    Qsave* Qimg = new Qsave();
+    Qimg->final = img_final;
+    Qimg->show();
 }
 
 QImage Prewitt::preimg(QString fileName, int a)
