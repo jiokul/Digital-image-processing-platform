@@ -1335,6 +1335,7 @@ QDateEdit::down-arrow:focus {
      </property>
      <addaction name="actionOTSU"/>
      <addaction name="actiondouble"/>
+     <addaction name="actionmax"/>
     </widget>
     <widget class="QMenu" name="menu_3">
      <property name="title">
@@ -1566,6 +1567,11 @@ QDateEdit::down-arrow:focus {
   <action name="actionHSV">
    <property name="text">
     <string>HSV直方图均衡化（V）</string>
+   </property>
+  </action>
+  <action name="actionmax">
+   <property name="text">
+    <string>最大熵阈值分割</string>
    </property>
   </action>
  </widget>

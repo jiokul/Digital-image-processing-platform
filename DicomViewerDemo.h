@@ -72,6 +72,7 @@ public slots:
 	void openHSIequation();
 	void openHSVequation();
 	void opendoubletchreshold();
+	void openmax();
 public:
 	QString currentDir = "NULL";//当前显示的文件路径
 	QString strDir[20];//存储文件路径

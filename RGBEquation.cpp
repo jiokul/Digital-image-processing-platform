@@ -35,6 +35,7 @@ RGBEquation::RGBEquation(QWidget *parent)
 
 RGBEquation::~RGBEquation()
 {
+    //delete& ui;
 }
 
 void RGBEquation::OpenImg(QImage* img)

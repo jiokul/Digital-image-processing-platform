@@ -62,6 +62,7 @@ public:
     QAction *actionHSI;
     QAction *actiondouble;
     QAction *actionHSV;
+    QAction *actionmax;
     QWidget *centralWidget;
     QHBoxLayout *horizontalLayout;
     QMenuBar *menuBar;
@@ -1419,6 +1420,8 @@ public:
         actiondouble->setObjectName(QString::fromUtf8("actiondouble"));
         actionHSV = new QAction(DicomViewerDemoClass);
         actionHSV->setObjectName(QString::fromUtf8("actionHSV"));
+        actionmax = new QAction(DicomViewerDemoClass);
+        actionmax->setObjectName(QString::fromUtf8("actionmax"));
         centralWidget = new QWidget(DicomViewerDemoClass);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
@@ -1497,6 +1500,7 @@ public:
         menu->addAction(actionANTICHROMIC);
         menu_2->addAction(actionOTSU);
         menu_2->addAction(actiondouble);
+        menu_2->addAction(actionmax);
         menu_3->addAction(actionPrewieet);
         menu_3->addAction(actionCanny);
         menu_4->addAction(actionEgray);
@@ -1551,6 +1555,7 @@ public:
         actionHSI->setText(QCoreApplication::translate("DicomViewerDemoClass", "HSI\347\251\272\351\227\264\347\233\264\346\226\271\345\233\276\345\235\207\350\241\241\345\214\226(I)", nullptr));
         actiondouble->setText(QCoreApplication::translate("DicomViewerDemoClass", "\345\217\214\351\230\210\345\200\274\345\210\206\345\211\262", nullptr));
         actionHSV->setText(QCoreApplication::translate("DicomViewerDemoClass", "HSV\347\233\264\346\226\271\345\233\276\345\235\207\350\241\241\345\214\226\357\274\210V\357\274\211", nullptr));
+        actionmax->setText(QCoreApplication::translate("DicomViewerDemoClass", "\346\234\200\345\244\247\347\206\265\351\230\210\345\200\274\345\210\206\345\211\262", nullptr));
         menufile->setTitle(QCoreApplication::translate("DicomViewerDemoClass", "\346\226\207\344\273\266", nullptr));
         menuedit->setTitle(QCoreApplication::translate("DicomViewerDemoClass", "\347\274\226\350\276\221", nullptr));
         menuview->setTitle(QCoreApplication::translate("DicomViewerDemoClass", "\350\247\206\345\233\276", nullptr));

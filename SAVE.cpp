@@ -205,7 +205,7 @@ void SAVE::saveimg()
 	case 12:gettrun(); break;
 	}
 	this->close();
-	qDebug() << svaefile + "/" + name + "." + type;
+	//qDebug() << svaefile + "/" + name + "." + type;
 }
 
 void SAVE::getgray()

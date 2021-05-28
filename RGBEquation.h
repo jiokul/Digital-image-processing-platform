@@ -44,7 +44,7 @@ public:
 	vector<float> rhist;
 	vector<float> ghist;
 	vector<float> bhist;
-	int newrhist[256] = {0};
+	int newrhist[256] = { 0 };
 	int newghist[256] = { 0 };
 	int newbhist[256] = { 0 };
 	QImage* imgE;

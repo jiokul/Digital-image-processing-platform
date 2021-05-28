@@ -59,6 +59,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Link>
       <AdditionalDependencies>../VTK/lib/*;../ITK/bin/lib/*.lib;F:\QT\5.15.0\msvc2019_64\lib\Qt5PrintSupportd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <StackReserveSize>16000000</StackReserveSize>
     </Link>
     <ClCompile>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;BOOST_ALL_NO_LIB;BOOST_USE_WINDOWS_H;NOMINMAX;_SCL_SECURE_NO_WARNINGS;_SILENCE_FPOS_SEEKPOS_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -117,6 +118,7 @@
     <ClCompile Include="HSIEquation.cpp" />
     <ClCompile Include="HSVEquation.cpp" />
     <ClCompile Include="Invert_colour.cpp" />
+    <ClCompile Include="Maximumentropy.cpp" />
     <ClCompile Include="MyLabel.cpp" />
     <ClCompile Include="Prewitt.cpp" />
     <ClCompile Include="qcustomplot.cpp" />
@@ -149,6 +151,7 @@
     <QtUic Include="HSIEquation.ui" />
     <QtUic Include="HSVEquation.ui" />
     <QtUic Include="Invert_colour.ui" />
+    <QtUic Include="Maximumentropy.ui" />
     <QtUic Include="Prewitt.ui" />
     <QtUic Include="Qsave.ui" />
     <QtUic Include="RGBEquation.ui" />
@@ -186,6 +189,7 @@
     <QtMoc Include="HSVEquation.h" />
     <ClInclude Include="ImageRender.h" />
     <QtMoc Include="Invert_colour.h" />
+    <QtMoc Include="Maximumentropy.h" />
     <ClInclude Include="MyLabel.h" />
     <ClInclude Include="myVtkInteractorStyleImage.h" />
     <QtMoc Include="screenShotClass.h" />

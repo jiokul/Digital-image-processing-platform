@@ -44,6 +44,7 @@
 #include "DoubleThreshold.h"
 #include "DoubleSubmit.h"
 #include "HSVEquation.h"
+#include "Maximumentropy.h"
 using namespace std;
 QString openfile;
 QString filepath;
@@ -73,6 +74,7 @@ DicomViewerDemo::DicomViewerDemo(QWidget* parent)
 	connect(ui.actionHSI, SIGNAL(triggered()), this, SLOT(openHSIequation()));
 	connect(ui.actiondouble, SIGNAL(triggered()), this, SLOT(opendoubletchreshold()));
 	connect(ui.actionHSV, SIGNAL(triggered()), this, SLOT(openHSVequation()));
+	connect(ui.actionmax, SIGNAL(triggered()), this, SLOT(openmax()));
 }
 
 DicomViewerDemo::~DicomViewerDemo()
@@ -236,6 +238,31 @@ void DicomViewerDemo::opendoubletchreshold()
 	Dimg->judgement = Simg->jud;
 	Dimg->process(Dimg->img_gray);
 	Dimg->OpenImg(Dimg->img_final);*/
+}
+
+void DicomViewerDemo::openmax()
+{
+	if (openfile.isEmpty())
+	{
+		QMessageBox::information(NULL, "error", "请先打开文件");
+		return;
+	}
+	Maximumentropy* Mimg = new Maximumentropy();
+	QPalette pal(Mimg->palette());
+	//设置背景黑色
+	pal.setColor(QPalette::Background, Qt::black);
+	Mimg->setAutoFillBackground(true);
+	Mimg->setPalette(pal);
+	Mimg->setAttribute(Qt::WA_DeleteOnClose);
+	Mimg->show();
+	QImage img = Mimg->maximgae(openfile, judgement);
+	Mimg->_img = &img;
+	QImage* grayImage = Mimg->grayScaleImg();
+	int threshold = Mimg->maxcalculate(grayImage);
+	qDebug() << threshold;
+	Mimg->threshold = threshold-49;
+	Mimg->img_final=Mimg->process(grayImage);
+	Mimg->OpenImg(Mimg->img_final);
 }
 
 

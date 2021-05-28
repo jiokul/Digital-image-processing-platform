@@ -122,6 +122,9 @@
     <ClCompile Include="Qsave.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Maximumentropy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="myVtkInteractorStyleImage.h">
@@ -213,6 +216,9 @@
     <QtMoc Include="Qsave.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="Maximumentropy.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="ShowAllTag.ui">
@@ -285,6 +291,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="Qsave.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="Maximumentropy.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
